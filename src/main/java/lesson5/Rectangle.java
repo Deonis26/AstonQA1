@@ -1,8 +1,8 @@
 package lesson5;
 
-public class Rectangle implements FigureForm{
+public class Rectangle implements FigureForm {
     private int wight;
-    private  int height;
+    private int height;
     private String colorBackground;
     private String colorBorder;
 
@@ -15,12 +15,12 @@ public class Rectangle implements FigureForm{
 
     @Override
     public double perimeterСalculation() {
-        return 2*(wight+height);
+        return 2 * (wight + height);
     }
 
     @Override
     public double areaCalculation() {
-        return wight*height;
+        return wight * height;
     }
 
     @Override

@@ -26,6 +26,7 @@ private static int countDog=0;
         }
     }
     public static int counterDog() {
+        System.out.print("Количество созданных собак: ");
         return countDog;
     }
 }

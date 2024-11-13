@@ -1,6 +1,6 @@
 package lesson5;
 
-public class Triangle implements FigureForm{
+public class Triangle implements FigureForm {
     private int sideA;
     private int sideB;
     private int sideC;
@@ -18,12 +18,12 @@ public class Triangle implements FigureForm{
 
     @Override
     public double perimeterСalculation() {
-        return sideA+sideB+sideC;
+        return sideA + sideB + sideC;
     }
 
     @Override
     public double areaCalculation() {
-        return (double) (sideA * sideB)/2;//при условии того что
+        return (double) (sideA * sideB) / 2;//при условии того что
     }
 
     @Override

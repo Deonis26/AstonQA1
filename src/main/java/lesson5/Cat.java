@@ -1,18 +1,19 @@
 package lesson5;
 
-public class Cat extends Animal{
-private static int counterCat =0;
-private boolean satiety;
-private int bowlOfFood=20;
+public class Cat extends Animal {
+    private static int counterCat = 0;
+    private boolean satiety;
+    private int amountOfFoodToSatisfyHunger = 15;
+
     public Cat(String name) {
         super(name);
-         counterCat++;
-         satiety=false;
+        counterCat++;
+        satiety = false;
     }
 
-    @Override
+   // @Override
     void swim(int swim) {
-        System.out.println(name+ " не умеет плавать! ");
+        System.out.println(name + " не умеет плавать! ");
     }
 
     @Override
@@ -20,16 +21,26 @@ private int bowlOfFood=20;
         if (run < 200) {
             System.out.println(name + " пробежал " + run);
         } else {
-            System.out.println(name+ " не пробежал дистанцию!");
+            System.out.println(name + " не пробежал дистанцию!");
         }
     }
-/*    public int addBowlOfFood(int food){
-        bowlOfFood=bowlOfFood+food;
-        return bowlOfFood;
-    }*/
+
+    public void eatFood(Bowl bowl) {
+        if (bowl.getFoodInBowl() >= amountOfFoodToSatisfyHunger) {
+            satiety = true;
+            bowl.setFoodInBowl(bowl.getFoodInBowl()-amountOfFoodToSatisfyHunger);
+        } else {
+            System.out.println(" В миске еды не достаточно, добавть еду в миску! ");
+        }
+    }
 
     public static int counterCat() {
-        System.out.println("количество созданных котов:"+counterCat);
+        System.out.print("Количество созданных котов: ");
         return counterCat;
+    }
+
+    @Override
+    public String toString() {
+        return "кот " +  name + ", сытость: " + satiety;
     }
 }
